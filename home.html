@@ -60,7 +60,7 @@
                 </div>
 
             </nav>
-            <div style="background-color: #66ff66; height: 20% ; position: absolute; top: 5;  left: 0; width: 100%; "></div>
+            <div style="background-color: #66ff66; height: 20% ; position: absolute; top: 5;  left: 0; width: 100%;"></div>
             
             <div id="home-div" v-show="seen_home" > <!--Div contenuto home della pagina-->
                 <!--Carousel home page-->
@@ -430,7 +430,7 @@
 
                         </ul>
                         <br>
-                        <h2 v-if="jsn_list_dummy[app.element].type==0"><U>Totale soggiorno:</U>&nbsp; {{app.n_notti*app.jsn_list_dummy[app.element].prezzo}} <i class="bi bi-currency-euro"></i></h2> <!--DA AGGIUNGERE SOVRAPPREZZO DATO DAL TIPO DI SOGGIORNO-->
+                        <h2 v-if="jsn_list_dummy[app.element].type==0"><U>Totale:</U>&nbsp; {{app.n_notti*app.jsn_list_dummy[app.element].prezzo}} <i class="bi bi-currency-euro"></i></h2> <!--DA AGGIUNGERE SOVRAPPREZZO DATO DAL TIPO DI SOGGIORNO-->
 
                     </div>
                     <br>
@@ -443,14 +443,14 @@
 
             <!--Storico-->
             <div v-if="seen_story" style="text-align: center;" id="storico">
-                <div style="width: 90%; margin: auto;">
+                <div style="width: 70%; margin: auto;">
                     <h2 style="margin-top:200px"><strong><U>Storico</U></strong></h2><br><br>
                     <table class="table table-success table-striped caption-top">
                         <caption>Storico</caption>
                         <thead>
                             <tr>
-                                <th>Immagine</th>
-                                <th>Tipo</th>
+                               <!-- <th>Immagine</th>-->
+                                <!--<th>Tipo</th>-->
                                 <th>Location</th>
                                 <th>Riepilogo</th>
                                 <th>Elimina</th>
@@ -461,11 +461,13 @@
                         <thead>
                         <tbody v-for="(index, i) in jsn_storico_dummy">
                             <tr >
-                                <td><img :src='jsn_storico_dummy[i].img' style="width: 150px; height: 100px;"></td>
+                                <!--<td><img :src='jsn_storico_dummy[i].img' style="width: 150px; height: 100px;"></td>
                                 <td v-if="jsn_storico_dummy[i].type==0" >Rifugio</td>
-                                <td v-if="jsn_storico_dummy[i].type==1" >Bivacco</td>
+                                <td v-if="jsn_storico_dummy[i].type==1" >Bivacco</td>-->
                                 <td>{{jsn_storico_dummy[i].nome}}</td>
-                                <td style="text-align: left;" ><strong><U>Posti:</U></strong> {{jsn_storico_dummy[i].posti}}<br> <div v-if="jsn_storico_dummy[i].type==0"><strong><U>Totale:</U></strong> {{jsn_storico_dummy[i].totale}}<i class="bi bi-currency-euro"></i><br> <strong><U>Soggiorno:</U></strong> {{jsn_storico_dummy[i].soggiorno}} <br></div><strong><U>Periodo:</U></strong> {{jsn_storico_dummy[i].periodo}}</td>
+                                <td  v-if="jsn_storico_dummy[i].type==0" style="text-align: left;" ><strong><U>Tipo:</U></strong> Rifugio<strong></strong><strong><br><U>Posti:</U></strong> {{jsn_storico_dummy[i].posti}}<br> <div v-if="jsn_storico_dummy[i].type==0"><strong><U>Totale:</U></strong> {{jsn_storico_dummy[i].totale}}<i class="bi bi-currency-euro"></i><br> <strong><U>Soggiorno:</U></strong> {{jsn_storico_dummy[i].soggiorno}} <br></div><strong><U>Periodo:</U></strong> {{jsn_storico_dummy[i].periodo}}</td>
+                               
+                                <td  v-if="jsn_storico_dummy[i].type==1"  style="text-align: left;" ><strong><U>Tipo:</U></strong> Bivacco<strong><br><U>Posti:</U></strong> {{jsn_storico_dummy[i].posti}}<br> <div v-if="jsn_storico_dummy[i].type==0"><strong><U>Totale:</U></strong> {{jsn_storico_dummy[i].totale}}<i class="bi bi-currency-euro"></i><br> <strong><U>Soggiorno:</U></strong> {{jsn_storico_dummy[i].soggiorno}} <br></div><strong><U>Periodo:</U></strong> {{jsn_storico_dummy[i].periodo}}</td>
                                 
                                 <!--Elimina prenotazione-->
                                 <td v-if="jsn_storico_dummy[i].voted==0"> <button type="button" class="btn btn-warning" @click="eliminaPrenotazione(i)"><i class="bi bi-calendar-x-fill"></i>Cancella</button></td>
