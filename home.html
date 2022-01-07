@@ -443,7 +443,7 @@
 
             <!--Storico-->
             <div v-if="seen_story" style="text-align: center;" id="storico">
-                <div style="width: 70%; margin: auto;">
+                <div style="width: 90%; margin: auto;">
                     <h2 style="margin-top:200px"><strong><U>Storico</U></strong></h2><br><br>
                     <table class="table table-success table-striped caption-top">
                         <caption>Storico</caption>
@@ -451,7 +451,7 @@
                             <tr>
                                <!-- <th>Immagine</th>-->
                                 <!--<th>Tipo</th>-->
-                                <th>Location</th>
+                                <!--<th>Location</th>-->
                                 <th>Riepilogo</th>
                                 <th>Elimina</th>
                                 <th>Ospitalità</th>
@@ -464,10 +464,10 @@
                                 <!--<td><img :src='jsn_storico_dummy[i].img' style="width: 150px; height: 100px;"></td>
                                 <td v-if="jsn_storico_dummy[i].type==0" >Rifugio</td>
                                 <td v-if="jsn_storico_dummy[i].type==1" >Bivacco</td>-->
-                                <td>{{jsn_storico_dummy[i].nome}}</td>
-                                <td  v-if="jsn_storico_dummy[i].type==0" style="text-align: left;" ><strong><U>Tipo:</U></strong> Rifugio<strong></strong><strong><br><U>Posti:</U></strong> {{jsn_storico_dummy[i].posti}}<br> <div v-if="jsn_storico_dummy[i].type==0"><strong><U>Totale:</U></strong> {{jsn_storico_dummy[i].totale}}<i class="bi bi-currency-euro"></i><br> <strong><U>Soggiorno:</U></strong> {{jsn_storico_dummy[i].soggiorno}} <br></div><strong><U>Periodo:</U></strong> {{jsn_storico_dummy[i].periodo}}</td>
+                                <!--<td>{{jsn_storico_dummy[i].nome}}</td>-->
+                                <td  v-if="jsn_storico_dummy[i].type==0" style="text-align: left;" ><strong><U>Luogo:</U></strong> {{jsn_storico_dummy[i].nome}}<br><strong><U>Tipo:</U></strong> Rifugio<strong></strong><strong><br><U>Posti:</U></strong> {{jsn_storico_dummy[i].posti}}<br> <div v-if="jsn_storico_dummy[i].type==0"><strong><U>Totale:</U></strong> {{jsn_storico_dummy[i].totale}}<i class="bi bi-currency-euro"></i><br> <strong><U>Soggiorno:</U></strong> {{jsn_storico_dummy[i].soggiorno}} <br></div><strong><U>Periodo:</U></strong> {{jsn_storico_dummy[i].periodo}}</td>
                                
-                                <td  v-if="jsn_storico_dummy[i].type==1"  style="text-align: left;" ><strong><U>Tipo:</U></strong> Bivacco<strong><br><U>Posti:</U></strong> {{jsn_storico_dummy[i].posti}}<br> <div v-if="jsn_storico_dummy[i].type==0"><strong><U>Totale:</U></strong> {{jsn_storico_dummy[i].totale}}<i class="bi bi-currency-euro"></i><br> <strong><U>Soggiorno:</U></strong> {{jsn_storico_dummy[i].soggiorno}} <br></div><strong><U>Periodo:</U></strong> {{jsn_storico_dummy[i].periodo}}</td>
+                                <td  v-if="jsn_storico_dummy[i].type==1"  style="text-align: left;" ><strong><U>Luogo:</U></strong> {{jsn_storico_dummy[i].nome}}<br><strong><U>Tipo:</U></strong> Bivacco<strong><br><U>Posti:</U></strong> {{jsn_storico_dummy[i].posti}}<br> <div v-if="jsn_storico_dummy[i].type==0"><strong><U>Totale:</U></strong> {{jsn_storico_dummy[i].totale}}<i class="bi bi-currency-euro"></i><br> <strong><U>Soggiorno:</U></strong> {{jsn_storico_dummy[i].soggiorno}} <br></div><strong><U>Periodo:</U></strong> {{jsn_storico_dummy[i].periodo}}</td>
                                 
                                 <!--Elimina prenotazione-->
                                 <td v-if="jsn_storico_dummy[i].voted==0"> <button type="button" class="btn btn-warning" @click="eliminaPrenotazione(i)"><i class="bi bi-calendar-x-fill"></i>Cancella</button></td>
