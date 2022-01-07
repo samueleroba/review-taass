@@ -740,7 +740,7 @@
             var end_tmp= new Date();
             end_tmp.setDate(start_tmp.getDate() + 1);
 
-            app.tmp_dump_periodo =start_tmp.toLocaleString().replace("/","-").replace("/","-").substr(0,10)  +" " +end_tmp.toLocaleString().replace("/","-").replace("/","-").substr(0,10);
+            app.tmp_dump_periodo =start_tmp.toLocaleString().replace("/","-").replace("/","-").substr(0,10).replace(",","")  +"  " +end_tmp.toLocaleString().replace("/","-").replace("/","-").substr(0,10).replace(",","");
             app.dump_periodo=app.tmp_dump_periodo;
             console.log(app.tmp_dump_periodo);
         });
@@ -947,6 +947,10 @@
                      = fine-inizio;
                     alert(app.n_notti*" inizio: "+app.dump_periodo.substr(0,10)+" fine: "+app.dump_periodo.substr(11));*/
                     app.n_notti=app.datediff(app.parseDate(app.dump_periodo.substr(0,10)),app.parseDate(app.dump_periodo.substr(11)));
+
+                    console.log( app.dump_periodo.substr(0,10) +" "+app.dump_periodo.substr(11) );
+                    console.log(app.n_notti);
+                    
                     document.body.scrollTop = document.documentElement.scrollTop = 0;
 
 
