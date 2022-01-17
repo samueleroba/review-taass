@@ -2,9 +2,6 @@ $(document).ready(function(){
 
     //Azioni da eseguire al caricamento della pagina
     find();
-    // Google login API
-    document.write('<script src="https://apis.google.com/js/platform.js" async defer></script><meta name="google-signin-client_id" content="595398968389-j7ao3ors9ged5r59lagmcacrbvnhdc6k.apps.googleusercontent.com">');
-
 
     var start_tmp =  new Date();
     var end_tmp= new Date();
@@ -16,14 +13,7 @@ $(document).ready(function(){
 });
 
 
- // Metodo di test
- function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-    console.log('User signed out.');
-    window.location.replace("login.html");
-    });
-}
+ 
 
 
 $(function() {
