@@ -70,6 +70,7 @@
                     </ul>
                 </div>
 
+
             </nav>
             <div style="background-color: #66ff66; height: 20% ; position: absolute; top: 5;  left: 0; width: 100%;"></div>
             
@@ -663,9 +664,11 @@
     
     <script>
 
-    
-        
-     
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.   
 
      // Metodo di test
         function signOut() {
