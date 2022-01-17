@@ -3,6 +3,11 @@ $(document).ready(function(){
     //Azioni da eseguire al caricamento della pagina
     find();
 
+    gapi.load('client:auth2', function() {
+        gapi.auth2.init();
+          
+  });
+     
    
     var start_tmp =  new Date();
     var end_tmp= new Date();
