@@ -6,7 +6,14 @@ $(document).ready(function(){
     gapi.load('client:auth2', function() {
         gapi.auth2.init();
           
-  });
+    });
+
+    
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
      
    
     var start_tmp =  new Date();
@@ -279,6 +286,7 @@ var app = new Vue({
         seen_book:false,
         seen_story:false,
         show_room_table:false,
+        logged: false,
         img_src_detail:'',
         element:-1,
         length: null,
