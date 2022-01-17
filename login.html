@@ -65,17 +65,13 @@
                             <!--Bottone login Google-->
                             <div >
                                 <div style="margin-left:57px; margin-top:25px ;" class="g-signin2" data-onsuccess="onSignIn" data-longtitle="true"></div>
-                                <!--Placeholder facebook login-->
+                                <!--Placeholder facebook login --------- logout di test -------- -->
                                 <button type="button" class="btn btn-primary" style="margin-top: 5px; " onclick="signOut()">Accedi con Facebook</button><br>
                             </div>
                         </div> 
                     </form>
                 </article>      
-
-
             </div>
-
-
         </div>
        
     </body>
@@ -91,8 +87,10 @@
             console.log('Name: ' + profile.getName());
             console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-         }
+            window.location.replace("home.html");
 
+         }
+         // Metodo di test
          function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();
             auth2.signOut().then(function () {
