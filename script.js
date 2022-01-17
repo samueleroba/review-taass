@@ -4,8 +4,7 @@ $(document).ready(function(){
     find();
 
     gapi.load('client:auth2', function() {
-        gapi.auth2.init();
-          
+        auth2=gapi.auth2.init(); 
     });
 
      
@@ -19,6 +18,10 @@ $(document).ready(function(){
     console.log(app.tmp_dump_periodo);
 });
 
+var onSuccess = function(user) {
+    console.log('Signed in as ' + user.getBasicProfile().getName());
+    // Redirect somewhere
+};
 
 
 $(function() {
